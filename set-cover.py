@@ -39,3 +39,26 @@ for student, courses in students.items():
     if current_courses_covered == required_classes:
         print(f"All required classes are covered by the first {list(students.keys()).index(student) + 1} students.")
         break
+
+
+#better algorithm:
+# remaining = set(required_classes)
+# chosen_students = []
+
+# while remaining:
+#     best_student = None
+#     best_cover = set()
+
+#     for student, courses in students.items():
+#         cover = remaining & set(courses)
+#         if len(cover) > len(best_cover):
+#             best_student = student
+#             best_cover = cover
+
+#     if not best_student:
+#         break
+
+#     chosen_students.append(best_student)
+#     remaining -= best_cover
+
+# print("Students chosen:", chosen_students)
